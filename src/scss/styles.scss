@@ -1,0 +1,7 @@
+// normalize
+@use './reset';
+@use './body';
+// components
+@use './components/header';
+@use './components/main';
+@use './components/footer';

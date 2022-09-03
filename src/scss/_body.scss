@@ -1,0 +1,51 @@
+// these weren in index.css
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  
+  // body
+  .App {
+    text-align: center;
+    background-color: black;
+    color: white;
+    min-height: 100vh;
+  }
+  
+  header {
+    border-bottom: 1px solid white;
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  header p {
+    font-size: 3rem;
+    margin: 0 1rem;
+  }
+  
+  header p span {
+    font-size: 1.5rem;
+  }
+  
+  .rating {
+    color: red;
+    font-size: 3rem;
+  }
+  
+  .button {
+    width: 6rem;
+    height: 2rem;
+    background-color: orange;
+    border-radius: 5px;
+  }
+  
