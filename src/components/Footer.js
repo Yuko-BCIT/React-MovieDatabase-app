@@ -1,7 +1,7 @@
 const Footer = ({title, author}) => {
     return(
         <footer>
-            <p>{title} The Movie Database &copy;2022 {author}</p>
+            <p><span id="preview">{title}&nbsp;</span>The Movie Database &nbsp;&nbsp; &copy;2022 &nbsp;{author}</p>
         </footer>
     );
 };

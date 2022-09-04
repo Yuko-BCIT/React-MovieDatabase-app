@@ -7,8 +7,8 @@ const PageHome = () => {
   useEffect(() => {
       document.title = "Home";
     }, []);
-    
-     const [nowPlaying, setNowPlaying] = useState(false);
+    // display movies
+     const [movies, setMovies] = useState(false);
     //  set initial filter as Now Playing, then change state by user's choice
      const [filter, setFilter] = useState('now_playing');
 
@@ -18,16 +18,17 @@ const PageHome = () => {
           const res = await fetch(`${BASE_URL}${filter}?api_key=${API_KEY}${LANGUAGE}`);
 
           let data = await res.json();
-          setNowPlaying(data);
+          setMovies(data);
         }
         fetchMovies();
     },[filter]);
-// [] fetches data only once, so you want to put [filter] in order to fetch data everytime user changes the filter
+// [] fetches data only once, so put [filter] in order to fetch data everytime user changes the filter(onClick)
 
 return (
     <section>
+      <h1 id="home">Home</h1>
       <img id="hero-image" src={film} alt="movie film roll" />
-      <h1>Show movies by</h1>
+      <h2>Show movies by</h2>
 
       <div id="selections">
         {/* onClick changes the filter and fetches new data from API */}
@@ -38,12 +39,14 @@ return (
         <p className={`category ${filter === 'top_rated' && 'active'}`} onClick={ () => {setFilter('top_rated')}}>Top Rated</p>
 
       </div>
+      {/* display movies from API fetch */}
       <div className="grid-wrapper">
-          {nowPlaying && nowPlaying.results.slice(0,12).map((movie, i) => 
+        {/* limits movies to 12 */}
+          {movies && movies.results.slice(0,12).map((movie, i) => 
                   <div>
                     <div className="poster">
                       <img key={i} src={`${IMAGE_BASE_URL}w500${movie.poster_path}`} alt={`movie poster of ${movie.title}`} />
-                            {/* this is overlay hover effect */}
+                            {/* overlay hover effect */}
                           <div className="overlay">
                             <div className="info">
                               <span className="rating">{movie.vote_average}</span>

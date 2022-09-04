@@ -1,0 +1,40 @@
+.page-wrapper {
+    max-width: 80%;
+    margin: 3rem auto;
+}
+// over 1000px
+@media (min-width: 62.5em){
+  .page-wrapper {
+  max-width: 70%;
+  }
+}
+.page-wrapper span {
+  font-size: 1.8rem;
+}
+
+// tmdb logo
+.tmdb-logo {
+  width: 7rem;
+  margin: 2rem;
+}
+
+/* poundingheart icon */
+
+.heart {
+  fill: red;
+  position: relative;
+  top: 5px;
+  width: 50px;
+  animation: pulse 1s ease 3;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
