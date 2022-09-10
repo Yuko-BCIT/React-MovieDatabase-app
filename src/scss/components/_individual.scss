@@ -3,18 +3,43 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  margin: 4rem 0;
-}
-
-@media (min-width: 800px) {
-  #individual-wrapper {
-    flex-direction: row;
-    img {
-      height: 50vh;
-    }
+  margin-top: 2rem;
+  .rating {
+    font-size: 1.5rem;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+  }
+  .title {
+    font-size: 2rem;
   }
 }
 
-#details {
-  margin: 0 3rem;
+// over 800px
+@media (min-width: 50em) {
+  #individual-wrapper {
+    flex-direction: row;
+    img {
+      width: 50%;
+    }
+  }
+  #details {
+    margin-left: 5rem;
+  }
+}
+
+.star-icon {
+  height: 5rem;
+}
+
+.rating-container {
+  position: relative;
+}
+
+
+
+#details p {
+  text-align: left;
 }

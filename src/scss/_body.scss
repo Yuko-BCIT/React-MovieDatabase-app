@@ -1,17 +1,22 @@
-/* font, margin, links etc */
+/* fonts, links etc */
 .App {
+  position: relative;
   min-height: 100vh;
+  width: 100%;
   font-family: 'montserrat', sans-serif;
   font-size: 1.2rem;
   text-align: center;
   color: white;
   background-color: #211717;
+  overflow: hidden;
+  padding-bottom: 4rem;
 }
 
 // custom-fonts
 h1,
 h2,
 h3,
+.rating,
 header span,
 .page-wrapper span {
   font-family: 'bely-display', sans-serif;
@@ -21,7 +26,7 @@ header span,
 
 // fonts
 h1 {
-  margin: 5rem auto 2rem;
+  margin: 2rem auto;
 }
 
 h2 {

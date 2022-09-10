@@ -10,10 +10,36 @@ h1#home {
   height: 80vh;
 }
 .rating {
-  color: red;
+  color: blue;
   font-size: 3rem;
 }
-.poster img, #individual-wrapper img {
+
+/* poundingheart icon */
+.heart-icon {
+  fill: red;
+  outline: red;
+  position: absolute;
+  top: 3%;
+  left: 37%;
+  height: 3rem;
+  animation: pulse 1s ease 5;
+  z-index: 100;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+// end of poundingheart icon
+
+.poster img,
+#individual-wrapper img {
   width: 100%;
   border-radius: 10px;
 }
@@ -95,7 +121,7 @@ h1#home {
 .category {
   transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
 }
-/* this set the different color when active */
+// this set the different color when active
 .category.active {
   background-color: #df2162;
   color: white;
@@ -134,7 +160,6 @@ h1#home {
   opacity: 1;
 }
 // end of overlay
-
 
 .title {
   font-size: 1.5rem;
