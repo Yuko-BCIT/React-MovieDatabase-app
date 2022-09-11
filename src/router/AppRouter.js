@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 //pages
 import PageHome from "../pages/PageHome";
 import PageAbout from "../pages/PageAbout";
-import PageIndividual from "../pages/PageIndividual";
+import PageDetails from "../pages/PageDetails";
 import PageFavorites from "../pages/PageFavorites";
 
 function AppRouter() {
@@ -18,14 +18,12 @@ function AppRouter() {
 
         {/* this main part changes by pages */}
         <main>
-          {/* Counter for redux store access */}
 
           <Routes>
             <Route path="/" exact element={<PageHome />} />
             <Route path="/about" element={<PageAbout />} />
-            <Route path="/details" element={<PageIndividual />} />
+            <Route path="/details" element={<PageDetails />} />
             <Route path="/favorites" element={<PageFavorites />} />
-            {/* <Route path="/movie/:id" element={<PageIndividual />} /> */}
           </Routes>
         </main>
 

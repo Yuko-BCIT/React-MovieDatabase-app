@@ -11,8 +11,8 @@ const PageAbout = () => {
     <section className="page-wrapper">
       <h1>About</h1>
       <p>
-       <span>Preview</span> is a movie database <strong>React</strong> app created for movie lovers. Browse movies, add
-        them to favorites and check them out in the cinema or watch from the
+       <span>Preview</span> is a movie database <strong>React</strong> app created for movie lovers. Browse movies for ratings and details, add
+        them to favorites and check them out in the cinema or watch them from the
         comfort of your own home. Enjoy!
       </p>
       <p>

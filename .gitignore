@@ -10,9 +10,11 @@
 
 # production
 /build
+/globals
 
 # misc
 .DS_Store
+.globals.js
 .env.local
 .env.development.local
 .env.test.local

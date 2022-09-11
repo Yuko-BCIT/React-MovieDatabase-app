@@ -1,7 +1,9 @@
+import { getThisYear } from "../utilities/utilities";
+
 const Footer = ({title, author}) => {
     return(
         <footer>
-            <p><span id="preview">{title}&nbsp;</span>The Movie Database &nbsp;&nbsp; &copy;2022 &nbsp;{author}</p>
+            <p><span id="preview">{title}&nbsp;</span>The Movie Database &nbsp;&nbsp; &copy;{getThisYear()} &nbsp;{author}</p>
         </footer>
     );
 };

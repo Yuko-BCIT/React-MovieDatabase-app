@@ -1,23 +1,38 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+// store favorites to client side local storage
+function getFaves() {
+  let faveStorage = localStorage.getItem('myfavorites');
+  if (faveStorage === null) {
+    faveStorage = [];
+  } else {
+    faveStorage = JSON.parse(faveStorage);
+  }
+  return faveStorage;
+}
+
 function getIndex(item, arr) {
   return arr.findIndex((arrItem) => arrItem.id === item.id);
 }
 
+
+// slice for add remove favorites
 export const favoritesSlice = createSlice({
   name: "favorites",
   initialState: {
-    items: [],
+    items: getFaves(),
   },
 
   reducers: {
     addItem: (state, action) => {
-      
-      state.items = [...state.items, action.payload];
+      const newFaves = [...state.items, action.payload];
+      localStorage.setItem('myfavorites', JSON.stringify(state.items));
+      state.items = newFaves;
     },
     deleteItem: (state, action) => {
-      
+      // const itemsCopy = state.items;
       state.items.splice(getIndex(action.payload, state.items), 1);
+      localStorage.setItem('myfavorites', JSON.stringify(state.items));
     },
   },
 });

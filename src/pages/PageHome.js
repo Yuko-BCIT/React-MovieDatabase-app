@@ -46,7 +46,7 @@ const PageHome = () => {
     <section>
       <h1 id="home">Home</h1>
       <img id="hero-image" src={film} alt="movie film roll" />
-      <h2>Show movies by</h2>
+      <h2 id="top">Show movies by</h2>
 
       <div id="selections">
         {/* onClick changes the filter and fetches new data from API */}
@@ -86,6 +86,8 @@ const PageHome = () => {
         </p>
       </div>
 
+      <p>Tap or hover over the posters to see ratings, overviews and more!</p>
+
       {/* display movies from API fetch */}
       <div className="grid-wrapper">
         {/* limits movies to 12 */}
@@ -113,9 +115,9 @@ const PageHome = () => {
                 {/* overlay hover effect */}
                 <div className="overlay">
                   <div className="info">
-                    <span className="rating">{movie.vote_average}</span>
+                    <p className="rating">{movie.vote_average}</p>
                     <p className="overview">
-                    {/* limit overviews to 200 letters  */}
+                    {/* limits overviews to 200 letters  */}
                       {movie.overview.slice(0, 200)}...
                     </p>
                     <Link to="/details" state={{ from: movie }}>
@@ -132,9 +134,9 @@ const PageHome = () => {
             </div>
           ))}
       </div>
-      <Link to="/">
+      <a href="#top">
         <p className="button">Top</p>
-      </Link>
+      </a>
     </section>
   );
 };

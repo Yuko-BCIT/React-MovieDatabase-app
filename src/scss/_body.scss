@@ -1,4 +1,4 @@
-/* fonts, links etc */
+/* fonts, links, items across multiple pages etc */
 .App {
   position: relative;
   min-height: 100vh;
@@ -7,8 +7,8 @@
   font-size: 1.2rem;
   text-align: center;
   color: white;
-  background-color: #211717;
-  overflow: hidden;
+  background-color: #231717;
+  // overflow: hidden;
   padding-bottom: 4rem;
 }
 
@@ -38,6 +38,45 @@ a {
   color: white;
 }
 
+/* poundingheart icon */
+.heart-icon {
+  fill: red;
+  outline: red;
+  position: absolute;
+  top: 3%;
+  left: 35%;
+  height: 3rem;
+  width: 3rem;
+  animation: pulse 1s ease 5;
+  z-index: 100;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+// end of poundingheart icon
+
+// general buttons on multiple pages
+.button {
+  margin: 2rem auto;
+  width: 8rem;
+  height: 3rem;
+  color: #420042f6;
+  background-color: orange;
+  border-radius: 5px;
+  line-height: 3rem;
+  text-transform: uppercase;
+}
+
+// highlight active nav
 a.active {
   color: #df2162;
+  font-size: 1.5rem;
 }
