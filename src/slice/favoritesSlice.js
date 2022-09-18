@@ -26,13 +26,14 @@ export const favoritesSlice = createSlice({
   reducers: {
     addItem: (state, action) => {
       const newFaves = [...state.items, action.payload];
-      localStorage.setItem('myfavorites', JSON.stringify(state.items));
+      localStorage.setItem('myfavorites', JSON.stringify(newFaves));
       state.items = newFaves;
     },
     deleteItem: (state, action) => {
-      // const itemsCopy = state.items;
-      state.items.splice(getIndex(action.payload, state.items), 1);
-      localStorage.setItem('myfavorites', JSON.stringify(state.items));
+      const itemsCopy = state.items;
+      itemsCopy.splice(getIndex(action.payload, state.items), 1);
+      localStorage.setItem('myfavorites', JSON.stringify(itemsCopy));
+      state.items = itemsCopy;
     },
   },
 });

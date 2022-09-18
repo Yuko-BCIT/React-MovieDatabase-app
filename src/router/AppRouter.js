@@ -9,6 +9,7 @@ import PageHome from "../pages/PageHome";
 import PageAbout from "../pages/PageAbout";
 import PageDetails from "../pages/PageDetails";
 import PageFavorites from "../pages/PageFavorites";
+import PageSubscribe from "../pages/PageSubscribe";
 
 function AppRouter() {
   return (
@@ -24,6 +25,7 @@ function AppRouter() {
             <Route path="/about" element={<PageAbout />} />
             <Route path="/details" element={<PageDetails />} />
             <Route path="/favorites" element={<PageFavorites />} />
+            <Route path="/subscribe" element={<PageSubscribe />} />
           </Routes>
         </main>
 

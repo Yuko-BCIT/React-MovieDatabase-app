@@ -18,6 +18,7 @@ const Details = () => {
   const [movie, setMovie] = useState([]);
   const { id } = useParams();
 
+    // get single movie detail
   useEffect(() => {
     const fetchDetails = async () => {
       const res = await fetch(
