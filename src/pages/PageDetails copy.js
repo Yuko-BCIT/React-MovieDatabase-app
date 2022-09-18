@@ -28,7 +28,7 @@ const Details = () => {
       console.log(movie);
     };
     fetchDetails();
-  }, [movie.id]);
+  }, []);
 
   // setting up favorites icons
   const faveItems = useSelector((state) => state.favorites.items);

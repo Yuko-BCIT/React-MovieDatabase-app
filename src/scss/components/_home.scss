@@ -10,6 +10,9 @@ h1#home {
   height: 70vh;
   object-fit: fill;
   object-position: center;
+  // this hides the read line under the header, only on Home page
+  position: relative;
+  top: -1px;
 }
 
 #top {
@@ -17,7 +20,7 @@ h1#home {
 }
 .rating {
   // color: #ffd700;
-  color: rgb(99, 99, 255);
+  color: #6363ff;
   font-size: 3rem;
   margin: 0;
   padding: 2rem 0;
@@ -53,6 +56,7 @@ h1#home {
 @media (min-width: 50.5em) {
   .grid-wrapper {
     grid-template-columns: repeat(3, 1fr);
+    font-size: 1rem;
   }
 }
 
@@ -67,13 +71,13 @@ h1#home {
   .grid-wrapper {
     margin: 3rem 4rem;
   gap: 3rem;
-
   }
 }
 
 /* "show movies by" buttons */
 #selections {
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
@@ -105,6 +109,8 @@ h1#home {
   outline: 0;
 }
 
+
+
 .category {
   transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
 }
@@ -116,6 +122,13 @@ h1#home {
 .category:hover {
   box-shadow: 0 0 40px 40px #df2162 inset;
 }
+
+@media (min-width: 700px) {
+  #selections {
+    flex-direction: row;
+  }
+}
+
 
 /*  overlay */
 .poster {

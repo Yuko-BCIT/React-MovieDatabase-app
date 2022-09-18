@@ -4,6 +4,10 @@
   justify-content: space-between;
   align-items: flex-start;
   margin-top: 2rem;
+  background-color: rgb(112, 73, 46);
+  border-radius: 10px;
+  background-color: #3e1717;
+
   .rating {
     font-size: 2.3rem;
     position: absolute;
@@ -35,7 +39,7 @@ position: relative;
     flex-direction: row;
   }
   #details {
-    margin-left: 5rem;
+    padding: 3rem;
     max-width: 50%;
   }
 }

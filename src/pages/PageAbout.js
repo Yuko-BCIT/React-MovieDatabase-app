@@ -13,15 +13,13 @@ const PageAbout = () => {
       <p>
        <span>Preview</span> is a movie database <strong>React</strong> app created for movie lovers. Browse movies for ratings and details, add
         them to favorites and check them out in the cinema or watch them from the
-        comfort of your own home. Enjoy!
+        comfort of your own home. Enjoy!<br />
+        This product uses the TMDB API but <strong>is not endorsed or certified</strong> by TMDB.
       </p>
-      <p>
-        This product uses the TMDB API but is not endorsed or certified by TMDB.
-      </p>
-      <img src={tmdb} alt="heart icon" className="tmdb-logo" />
+      <img src={tmdb} alt="tmdb logo" className="tmdb-logo" />
 
       <Link to="/">
-          <p className="button">Back</p>
+          <p className="button button-special">Back</p>
       </Link>
     </section>
   );

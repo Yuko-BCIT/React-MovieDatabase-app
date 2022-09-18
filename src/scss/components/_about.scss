@@ -2,6 +2,12 @@
     max-width: 80%;
     margin: 3rem auto;
 }
+
+// align p tags left, except for p.button
+.page-wrapper p:not(.button){
+  text-align: left;
+  line-height: 1.7;
+}
 // over 1000px
 @media (min-width: 62.5em){
   .page-wrapper {
@@ -14,6 +20,6 @@
 
 // tmdb logo
 .tmdb-logo {
-  width: 7rem;
-  margin: 2rem;
+  width: 5rem;
+  margin-top: 2rem;
 }

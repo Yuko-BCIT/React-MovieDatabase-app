@@ -4,8 +4,9 @@ import { IMAGE_BASE_URL } from "../globals/globals";
 import { addItem, deleteItem } from "../slice/favoritesSlice";
 import { useEffect } from "react";
 import star from "../images/star.svg";
-import heart from "../images/heart.svg"
+import heart from "../images/heart.svg";
 import { useDispatch, useSelector } from "react-redux";
+import poster from "../images/poster.jpg";
 
 const Details = () => {
   //   const { id } = useParams();
@@ -21,23 +22,31 @@ const Details = () => {
   function inCart(id, arr) {
     return arr.some((item) => item.id === id);
   }
-  
+
   return (
     <section className="page-wrapper">
       <h1>Movie Details</h1>
       <div id="individual-wrapper">
         <div id="details-img">
+          {from.poster_path === null ? (
+            <img src={poster} alt="french bulldog" />
+          ) : (
+            <img
+              src={`${IMAGE_BASE_URL}w500${from.poster_path}`}
+              alt={`movie poster of ${from.title}`}
+            />
+          )}
           <img
-            src={`${IMAGE_BASE_URL}w500${from.poster_path}`}
-            alt={`movie poster of ${from.title}`}
+            onClick={() => {
+              inCart(from.id, faveItems)
+                ? dispatch(deleteItem(from))
+                : dispatch(addItem(from));
+            }}
+            src={heart}
+            alt="heart icon"
+            className="heart-icon"
+            id="heart-details"
           />
-          <img onClick={() => {
-                        inCart(from.id, faveItems) ? dispatch(deleteItem(from)):
-                        dispatch(addItem(from));
-                      }
-                      }
-                      src={heart} alt="heart icon" className="heart-icon" id="heart-details"
-                      />
         </div>
         <div id="details">
           <p className="title">{from.title}</p>
@@ -49,20 +58,17 @@ const Details = () => {
             <p className="rating">{from.vote_average}</p>
           </div>
 
-            
-
           {/* convert id to letters. how? */}
           <p>Genres</p>
           <p className="genres">{from.genre_ids}</p>
           <p>Overview</p>
           <p className="tagline">{from.tagline}</p>
           <p className="overview">{from.overview}</p>
-          
         </div>
       </div>
-        <Link to="/">
-            <p className="button">Back</p>
-          </Link>
+      <Link to="/">
+        <p className="button button-special">Back</p>
+      </Link>
     </section>
   );
 };

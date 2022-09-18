@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { deleteItem } from "../slice/favoritesSlice";
 import { IMAGE_BASE_URL } from "../globals/globals";
 import heart from "../images/heart.svg";
+import poster from "../images/poster.jpg";
 
 const PageFavorites = () => {
   useEffect(() => {
@@ -15,7 +16,7 @@ const PageFavorites = () => {
   const dispatch = useDispatch();
 
   return (
-    <section>
+    <section className="page-wrapper">
       <h1>Favorites</h1>
       {/* if faveItems exists, this renders. iterate over faveItems array to display movies */}
       {/* to check if array isn't empty, "not" faveItems >= 1 ? , but faveItems.length >= 1 ? */}
@@ -24,11 +25,15 @@ const PageFavorites = () => {
           <div className="grid-wrapper">
             <div>
               <div className="poster">
-                <img
-                  key={i}
-                  src={`${IMAGE_BASE_URL}w500${movie.poster_path}`}
-                  alt={`movie poster of ${movie.title}`}
-                />
+                {movie.poster_path === null ? (
+                  <img src={poster} alt="french bulldog" />
+                ) : (
+                  <img
+                    key={i}
+                    src={`${IMAGE_BASE_URL}w500${movie.poster_path}`}
+                    alt={`movie poster of ${movie.title}`}
+                  />
+                )}
                 <img
                   onClick={() => dispatch(deleteItem(movie))}
                   src={heart}
@@ -43,7 +48,7 @@ const PageFavorites = () => {
                       {movie.overview.slice(0, 200)}...
                     </p>
                     <Link to="/details" state={{ from: movie }}>
-                      <p className="button">More Info</p>
+                      <p className="button button-spceial">More Info</p>
                     </Link>
                   </div>
                 </div>
@@ -59,12 +64,13 @@ const PageFavorites = () => {
       ) : (
         // if array is empty, render this
         <p>
-          Add movies to favorites by clicking ❤️ and create your own watch list.
+          Add movies to favorites and create your own watch list, by clicking &#9825; 
+          to fill the empty hearts!
         </p>
       )}
 
       <Link to="/">
-        <p className="button">Back</p>
+        <p className="button button-special">Back</p>
       </Link>
     </section>
   );
