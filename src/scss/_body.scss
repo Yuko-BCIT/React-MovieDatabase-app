@@ -1,9 +1,10 @@
-/* fonts, links, items across multiple pages etc */
+/* fonts, links, buttons and icons across multiple pages etc */
+// body styling for entire site
 .App {
   position: relative;
   min-height: 100vh;
   width: 100%;
-  font-family: 'montserrat', sans-serif;
+  font-family: "montserrat", sans-serif;
   font-size: 1.2rem;
   text-align: center;
   color: white;
@@ -18,7 +19,7 @@ h3,
 .rating,
 header span,
 .page-wrapper span {
-  font-family: 'bely-display', sans-serif;
+  font-family: "bely-display", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -27,12 +28,10 @@ header span,
 h1 {
   margin: 2rem auto;
   color: #a502a5;
-
 }
 
 h2 {
   font-size: 2rem;
-
 }
 
 a {
@@ -46,15 +45,23 @@ a {
     fill: transparent;
     stroke: red;
   }
+  cursor: pointer;
   overflow: visible;
   position: absolute;
-  top: 5%;
-  left: 75%;
+  top: 3%;
+  right: 5%;
   height: 3rem;
   width: 3rem;
   animation: pulse 1s ease 5;
   z-index: 100;
 }
+// fill in heart
+.heart-active {
+  path {
+    fill: red;
+  }
+}
+// aniation
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -66,16 +73,11 @@ a {
     transform: scale(1);
   }
 }
-.heart-active  {
-  path {
-    fill: red;
-  }
-}
 // end of poundingheart icon
 
 // general buttons on multiple pages
 .button {
-  margin: 2rem auto;
+  margin: 3rem auto;
   width: 8rem;
   height: 3rem;
   color: #420042f6;
@@ -83,59 +85,26 @@ a {
   border-radius: 5px;
   line-height: 3rem;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
+// more info button
+.button-info {
+  position: absolute;
+  bottom: 3rem;
+  left: 0;
+  right: 0;
+
+  margin: 0 auto;
+}
+
+// buttons on the bottom of each page
 .button-special {
   position: absolute;
   right: 0;
   left: 0;
   bottom: 4rem;
-}
-
-// highlight active nav
-a.active {
-  color: #df2162;
-}
-
-// form styling on Subscribe page
-form {
   margin: 2rem auto;
-  width: 100%;
-}
-input {
-  border: none;
-  display: block;
-  margin: 0 auto;
 }
 
-input[type="text"],
-input[type="email"] {
-  height: 2.5rem;
-  width: 100%;
-  border-radius: 5rem;
-  text-align: center;
-  color: #423e3e;
-}
 
-label {
-  display: block;
-  text-align: left;
-  font-size: 1.3rem;
-  margin: 0.7rem 0;
-}
-
-.center-me {
-  max-width: 100%;
-  margin: 0 auto;
-  display: inline-block;
-}
-
-@media (min-width: 700px) {
-  form {
-    width: 30rem;
-  }
-  input[type="text"],
-input[type="email"] {
-  width: 30rem;
-}
-}

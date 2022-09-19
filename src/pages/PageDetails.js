@@ -13,7 +13,7 @@ const Details = () => {
   const { from } = location.state;
 
   return (
-    <section className="page-wrapper">
+    <section className="page-wrapper" id="page-details">
       <h1>Movie Details</h1>
       <div id="individual-wrapper">
         <div id="details-img">
@@ -28,7 +28,6 @@ const Details = () => {
         </div>
         <div id="details">
           <p className="title">{from.title}</p>
-          <p>Release Date</p>
           <p className="release-date">{from.release_date}</p>
           
           {/* rating in star icon */}

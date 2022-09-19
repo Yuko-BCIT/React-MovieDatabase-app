@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { addItem, deleteItem } from "../slice/favoritesSlice";
+import { deleteItem } from "../slice/favoritesSlice";
 import { IMAGE_BASE_URL } from "../globals/globals";
 import poster from "../images/poster.jpg";
 
@@ -14,18 +14,14 @@ const PageFavorites = () => {
   const faveItems = useSelector((state) => state.favorites.items);
   const dispatch = useDispatch();
 
-  function inCart(id, arr) {
-    return arr.some((item) => item.id === id);
-  }
-
   return (
-    <section className="page-wrapper">
+    <section className="favorite-wrapper">
       <h1>Favorites</h1>
       {/* if faveItems exists, this renders. iterate over faveItems array to display movies */}
-      {/* to check if array isn't empty, "not" faveItems >= 1 ? , but faveItems.length >= 1 ? */}
-      <div className="grid-wrapper">
-        {faveItems.length >= 1 ? (
-          faveItems.map((movie, i) => (
+      {/* to check if array isn't empty, "not" faveItems >= 1, but faveItems.length >= 1 */}
+      {faveItems.length >= 1 ? (
+        <div className="grid-wrapper">
+          {faveItems.map((movie, i) => (
             <div>
               <div className="poster">
                 {movie.poster_path === null ? (
@@ -42,20 +38,10 @@ const PageFavorites = () => {
                 <svg
                   onClick={(e) => {
                     // this will remove movies from favorites & fill in the heart icons
-                    if (inCart(movie.id, faveItems)) {
-                      dispatch(deleteItem(movie));
-                      e.target.classList.add("heart-active");
-                      // this will add movies to favorites & unfill the heart icons
-                    } else {
-                      dispatch(addItem(movie));
-                      e.target.classList.remove("heart-active");
-                    }
+                    dispatch(deleteItem(movie));
+                    e.target.classList.add("heart-active");
                   }}
-                  className={
-                    inCart(movie.id, faveItems)
-                      ? "heart-icon heart-active"
-                      : "heart-icon"
-                  }
+                  className={"heart-icon heart-active"}
                   viewBox="0 0 32 29.6"
                   strokeWidth="1.8"
                 >
@@ -69,12 +55,12 @@ const PageFavorites = () => {
                   <div className="info">
                     <span className="rating">{movie.vote_average}</span>
                     <p className="overview">
-                      {movie.overview.slice(0, 200)}...
+                      {movie.overview.slice(0, 150)}...
                     </p>
-                    <Link to="/details" state={{ from: movie }}>
-                      <p className="button button-spceial">More Info</p>
-                    </Link>
                   </div>
+                  <Link to="/details" state={{ from: movie }}>
+                    <p className="button button-info">More Info</p>
+                  </Link>
                 </div>
               </div>
 
@@ -83,15 +69,15 @@ const PageFavorites = () => {
                 <em>{movie.release_date}</em>
               </p>
             </div>
-          ))
-        ) : (
-          // if array is empty, render this
-          <p>
-            Add movies to favorites and create your own watch list, by clicking
-            &#9825; to fill the empty hearts!
-          </p>
-        )}
-      </div>
+          ))}
+        </div>
+      ) : (
+        // if favorite array is empty, render this
+        <p id="no-favorites">
+          Add movies to favorites by clicking &#9825; and create your own watch
+          list!
+        </p>
+      )}
 
       <Link to="/">
         <p className="button button-special">Back</p>

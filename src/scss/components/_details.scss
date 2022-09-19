@@ -1,12 +1,12 @@
+#page-details {
+  width: 100%;
+}
+
 #individual-wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
   margin-top: 2rem;
-  background-color: rgb(112, 73, 46);
   border-radius: 10px;
-  background-color: #3e1717;
 
   .rating {
     font-size: 2.3rem;
@@ -22,24 +22,32 @@
   
 }
 
-#details-img {
-position: relative;
+#details {
+  position: relative;
+  align-self: flex-start;
+  margin: 2rem 0 0;
+  .overview {
+    margin-top: 3rem;
+  }
 }
 
-// heart icon on details page
-#heart-details {
-  top: 5%;
-  right: 5%;
-  animation: pulse 1s ease 3;
+#details-img {
+  display: block;
+  margin: 1rem;
 }
 
 // over 800px
 @media (min-width: 50em) {
   #individual-wrapper {
     flex-direction: row;
+  align-items: center;
+  background-color: #5e3a3a;
+
+
   }
   #details {
-    padding: 3rem;
+    margin: 0;
+    padding: 0 1rem;
     max-width: 50%;
   }
 }

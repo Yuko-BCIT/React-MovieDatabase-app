@@ -10,6 +10,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { addItem, deleteItem } from "../slice/favoritesSlice";
 import film from "../images/film.jpg";
 import poster from "../images/poster.jpg";
+import camera from "../images/camera.jpg";
 
 const PageHome = () => {
   useEffect(() => {
@@ -21,7 +22,6 @@ const PageHome = () => {
 
   //  set initial filter as Now Playing, then change state by user's choice
   const [filter, setFilter] = useState("popular");
-
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -59,7 +59,12 @@ const PageHome = () => {
   return (
     <section>
       <h1 id="home">Home</h1>
-      <img id="hero-image" src={film} alt="movie film roll" />
+
+      <picture>
+        <source srcSet={camera} media="(max-width: 700px)" />
+        <img className="hero-image" src={film} alt="movie film roll" />
+      </picture>
+
       <h2 id="top">Show movies by</h2>
 
       <div id="selections">
@@ -99,8 +104,6 @@ const PageHome = () => {
         </p>
       </div>
 
-      <p>Tap or hover over the posters to see ratings, overviews and more!</p>
-
       {/* display movies from API fetch */}
       <div className="grid-wrapper">
         {/* limits movies to 12 */}
@@ -125,18 +128,21 @@ const PageHome = () => {
                     // this will remove movies from favorites & fill in the heart icons
                     if (inCart(movie.id, faveItems)) {
                       dispatch(deleteItem(movie));
-                      e.target.classList.add('heart-active');
-                    // this will add movies to favorites & unfill the heart icons 
+                      e.target.classList.add("heart-active");
+                      // this will add movies to favorites & unfill the heart icons
                     } else {
                       dispatch(addItem(movie));
-                      e.target.classList.remove('heart-active');
+                      e.target.classList.remove("heart-active");
                     }
                   }}
-                  
                   state={{ from: movie }}
-                  className={inCart(movie.id, faveItems) ? "heart-icon heart-active" : "heart-icon"}
+                  className={
+                    inCart(movie.id, faveItems)
+                      ? "heart-icon heart-active"
+                      : "heart-icon"
+                  }
                   viewBox="0 0 32 29.6"
-                  stroke-width="1.8"
+                  strokeWidth="1.8"
                 >
                   <path
                     d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
@@ -146,19 +152,19 @@ const PageHome = () => {
 
                 {/* overlay hover effect */}
                 <div className="overlay">
-                  <div className="info">
                     <p className="rating">{movie.vote_average}</p>
+                  <div className="info">
                     <p className="overview">
-                      {/* limits overviews to 200 letters  */}
-                      {movie.overview.slice(0, 200)}...
+                      {/* limits overviews to 150 letters  */}
+                      {movie.overview.slice(0, 150)}...
                     </p>
-                    <Link to="/details" state={{ from: movie }}>
-                      {/* test */}
-                      {/* <Link to={`/details/${movie.id}`} state={{ from: movie }}> */}
-
-                      <p className="button">More Info</p>
-                    </Link>
                   </div>
+                  <Link to="/details" state={{ from: movie }}>
+                    {/* test */}
+                    {/* <Link to={`/details/${movie.id}`} state={{ from: movie }}> */}
+
+                    <p className="button button-info">More Info</p>
+                  </Link>
                 </div>
               </div>
 

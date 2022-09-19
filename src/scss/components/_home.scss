@@ -5,19 +5,27 @@ h1#home {
   width: 0;
 }
 
-#hero-image {
+.hero-image {
   width: 100vw;
   height: 70vh;
-  object-fit: fill;
+  object-fit: cover;
   object-position: center;
   // this hides the read line under the header, only on Home page
   position: relative;
   top: -1px;
 }
 
+@media (min-width: 700px) {
+  .hero-image {
+    object-fit: fill;
+    height: 65vh;
+  }
+}
+
 #top {
   padding-top: 2rem;
 }
+
 .rating {
   // color: #ffd700;
   color: #6363ff;
@@ -34,13 +42,10 @@ h1#home {
 .grid-wrapper {
   display: grid;
   grid-template-columns: 1fr;
-  /* grid-template-rows: repeat(3, auto); */
   gap: 3rem;
   max-width: 100%;
   overflow: hidden;
   margin: 3rem 4rem;
-
-
 }
 
 // over 600px tablet
@@ -52,16 +57,16 @@ h1#home {
   }
 }
 
-// over 800px
-@media (min-width: 50.5em) {
+// over 1000px
+@media (min-width: 62.5em) {
   .grid-wrapper {
     grid-template-columns: repeat(3, 1fr);
     font-size: 1rem;
   }
 }
 
-// over 1000px desktop
-@media (min-width: 62.5em) {
+// over 1400px desktop
+@media (min-width: 87.5em) {
   .grid-wrapper {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -76,31 +81,46 @@ h1#home {
 
 /* "show movies by" buttons */
 #selections {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0 2rem;
 }
 
+@media (min-width: 900px) {
+  #selections {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+}
+}
+
+// show movies by individual button
 .category {
-  // appearance: none;
+  color: #df2162;
   background-color: transparent;
   border: 2px solid #df2162;
   border-radius: 0.6rem;
-  color: #df2162;
-
+  // positioning
   cursor: pointer;
   display: flex;
   align-self: center;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1;
+  justify-content: center; /* this is for centering text in grid */
   margin: 1.2rem;
   padding: 1.2rem 2.8rem;
+  // text styling
+  font-size: 0.8rem;
   text-decoration: none;
-  text-align: center;
   text-transform: uppercase;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
+
+}
+
+@media (min-width: 1000px) {
+  .category {
+    font-size: 1rem;
+  }
 }
 
 .category:hover,
@@ -109,26 +129,19 @@ h1#home {
   outline: 0;
 }
 
-
-
 .category {
   transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
 }
+
 // this set the different color when active
 .category.active {
   background-color: #df2162;
   color: white;
 }
+
 .category:hover {
   box-shadow: 0 0 40px 40px #df2162 inset;
 }
-
-@media (min-width: 700px) {
-  #selections {
-    flex-direction: row;
-  }
-}
-
 
 /*  overlay */
 .poster {

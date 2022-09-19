@@ -1,0 +1,59 @@
+// form styling on Subscribe page
+form {
+  margin: 2rem auto;
+  width: 100%;
+}
+input {
+  border: none;
+  display: block;
+  margin: 0 auto;
+}
+
+input[type="text"],
+input[type="email"] {
+  height: 2.5rem;
+  width: 100%;
+  border-radius: 5rem;
+  color: #423e3e;
+  padding-left: 2rem;
+}
+
+label {
+  display: block;
+  text-align: left;
+  font-size: 1.3rem;
+  margin: 0.7rem 0;
+}
+
+.center-me {
+  margin: 0 auto;
+  display: inline-block;
+}
+
+@media (min-width: 700px) {
+  form {
+    width: 30rem;
+  }
+  input[type="text"],
+  input[type="email"] {
+    width: 30rem;
+  }
+}
+
+// PageThanks styling
+.page-thanks {
+  margin: 3rem auto;
+}
+
+.page-thanks .center-me {
+  margin: 1rem auto;
+}
+
+// PageThanks styling
+.thanks-img {
+    width: 100%;
+    height: 40vh;
+    display: block;
+    object-fit: cover;
+}
+

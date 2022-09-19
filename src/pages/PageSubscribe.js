@@ -1,10 +1,15 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const PageSubscribe = () => {
+  // make the user fill out the form, then when filled correctly, take to the designated page
+  // <link /> doesn't work so useNavigate() instead
+  const navigate = useNavigate();
   function nothingWillSubmit(e) {
-    document.getElementById("nosubmit");
     e.preventDefault();
+    navigate("/thanks");
   }
+
   return (
     <section className="page-wrapper">
       <h1>Subscribe</h1>
@@ -17,19 +22,16 @@ const PageSubscribe = () => {
 
       <form action="" method="post" onSubmit={nothingWillSubmit}>
         <label htmlFor="name">Nickame</label>
-        <input type="text" id="name" />
+        <input type="text" id="name" required />
 
         <label htmlFor="email">Email</label>
-        <input type="email" id="email" />
+        <input type="email" id="email" required />
 
-        <Link to="/">
-          <input
-            id="nosubmit"
-            type="submit"
-            value="Subscribe"
-            className="button button-spceial"
-          />
-        </Link>
+        <input
+          type="submit"
+          value="Subscribe"
+          className="button button-spceial"
+        />
       </form>
     </section>
   );

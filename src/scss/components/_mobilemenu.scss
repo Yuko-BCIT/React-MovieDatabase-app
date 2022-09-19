@@ -1,0 +1,138 @@
+// mobile navigation and hamburger menu styling
+
+/* slide-out menu mobile */
+.main-nav {
+  width: 0;
+  overflow: hidden;
+  visibility: hidden;
+  background-color: #221616;
+  font-family: "bely-display", sans-serif;
+  z-index: 500;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  transition: width 0.3s ease, visibility 0s 0.3s;
+}
+
+.show .main-nav {
+  transition: width 0.3s ease, visibility 0s;
+  visibility: visible;
+  width: 100%;
+}
+
+.main-nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 0 0;
+  margin: 0;
+  list-style: none;
+}
+.main-nav li {
+  font-size: 2rem;
+  padding: 4rem 0;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+  color: #6363ff;
+}
+/* end of .main-nav bar */
+
+/* .main-nav bar over 700px */
+@media (min-width: 700px) {
+  header {
+    flex-wrap: nowrap;
+    align-items: baseline;
+    padding: 1rem;
+  }
+
+  .main-nav {
+    visibility: visible;
+  font-family: "montserrat", sans-serif;
+    background-color: transparent;
+    position: relative;
+    width: auto;
+    height: 100%;
+  }
+
+  .main-nav ul {
+    flex-direction: row;
+    align-items: baseline;
+    padding: 0;
+  }
+  .main-nav li {
+    margin-left: 1rem;
+    padding: 0;
+    font-size: 1rem;
+  }
+
+  .btn-main-nav {
+    display: none;
+  }
+}
+
+@media (min-width: 900px) {
+  .main-nav li {
+    margin-left: 2rem;
+    font-size: 1.2rem;
+  }
+}
+
+// hamburger button
+.btn-main-nav {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.7rem;
+  border: none;
+  background: none;
+  z-index: 1000;
+  overflow: hidden;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .line {
+    width: 40px;
+    height: 5px;
+    background-color: #ffffff;
+    display: block;
+    margin: 8px auto;
+
+    transition: all 0.3s ease-in-out;
+
+    .show & {
+      transition: all 0.3s ease-in-out;
+    }
+
+    .show &:nth-child(2) {
+      width: 0;
+    }
+
+    .show &:nth-child(1),
+    .btn-main-nav.show .line:nth-child(3) {
+      transition-delay: 0.3s;
+    }
+
+    .show &:nth-child(1) {
+      transform: translateY(13px);
+    }
+
+    .show &:nth-child(3) {
+      transform: translateY(-13px) rotate(90deg);
+    }
+  }
+
+  .show & {
+    transition: all 0.3s ease-in-out;
+    transition-delay: 0.6s;
+    transform: rotate(45deg);
+  }
+  // screen over 700px
+  @media (min-width: 700px) {
+    display: none;
+  }
+}
+// end of hamburger button

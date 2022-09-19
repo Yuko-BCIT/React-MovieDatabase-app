@@ -3,7 +3,10 @@
 @use './body';
 // components
 @use './components/header';
+@use './components/mobilemenu';
 @use './components/footer';
 @use './components/home';
 @use './components/about';
 @use './components/details';
+@use './components/favorites';
+@use './components/subscribe';

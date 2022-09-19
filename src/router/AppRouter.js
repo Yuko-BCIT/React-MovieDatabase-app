@@ -1,6 +1,5 @@
 import { appTitle, appAuthor } from "../globals/globals";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 //components
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -10,6 +9,7 @@ import PageAbout from "../pages/PageAbout";
 import PageDetails from "../pages/PageDetails";
 import PageFavorites from "../pages/PageFavorites";
 import PageSubscribe from "../pages/PageSubscribe";
+import PageThanks from "../pages/PageThanks";
 
 function AppRouter() {
   return (
@@ -19,13 +19,13 @@ function AppRouter() {
 
         {/* this main part changes by pages */}
         <main>
-
           <Routes>
             <Route path="/" exact element={<PageHome />} />
             <Route path="/about" element={<PageAbout />} />
             <Route path="/details" element={<PageDetails />} />
             <Route path="/favorites" element={<PageFavorites />} />
             <Route path="/subscribe" element={<PageSubscribe />} />
+            <Route path="/thanks" element={<PageThanks />} />
           </Routes>
         </main>
 
