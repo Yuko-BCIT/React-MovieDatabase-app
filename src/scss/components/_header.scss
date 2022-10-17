@@ -24,9 +24,17 @@ header p {
 #subtitle {
   font-family: "montserrat", sans-serif;
   font-size: 0.8rem;
+  display: none;
 }
 
-@media (min-width: 700px) {
+// over 400px
+@media (min-width: 25em) {
+  #subtitle {
+    display: inline;
+  }
+}
+// over 700px
+@media (min-width: 43.75em) {
   header {
     height: 5rem;
   }
@@ -34,8 +42,8 @@ header p {
     display: none;
   }
 }
-
-@media (min-width: 1000px) {
+// over 1000px
+@media (min-width: 62.5em) {
   #subtitle {
     display: inline;
     font-size: 1.2rem;
@@ -49,8 +57,7 @@ header p {
   }
 }
 
-// highlight active nav
+// highlight active page
 a.active {
   color: #df2162;
 }
-

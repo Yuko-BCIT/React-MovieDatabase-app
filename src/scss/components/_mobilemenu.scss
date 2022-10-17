@@ -1,6 +1,6 @@
 // mobile navigation and hamburger menu styling
 
-/* slide-out menu mobile */
+// slide-out menu mobile
 .main-nav {
   width: 0;
   overflow: hidden;
@@ -13,35 +13,35 @@
   right: 0;
   height: 100%;
   transition: width 0.3s ease, visibility 0s 0.3s;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 0 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  li {
+    font-size: 2rem;
+    padding: 4rem 0;
+  }
+
+  a:hover,
+  a:focus {
+    color: #6363ff;
+  }
+  // & means parent selector
+  .show & {
+    transition: width 0.3s ease, visibility 0s;
+    visibility: visible;
+    width: 100%;
+  }
 }
 
-.show .main-nav {
-  transition: width 0.3s ease, visibility 0s;
-  visibility: visible;
-  width: 100%;
-}
-
-.main-nav ul {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 5rem 0 0;
-  margin: 0;
-  list-style: none;
-}
-.main-nav li {
-  font-size: 2rem;
-  padding: 4rem 0;
-}
-
-.main-nav a:hover,
-.main-nav a:focus {
-  color: #6363ff;
-}
-/* end of .main-nav bar */
-
-/* .main-nav bar over 700px */
-@media (min-width: 700px) {
+// over 700px 
+@media (min-width: 43.75em) {
   header {
     flex-wrap: nowrap;
     align-items: baseline;
@@ -50,35 +50,35 @@
 
   .main-nav {
     visibility: visible;
-  font-family: "montserrat", sans-serif;
+    font-family: "montserrat", sans-serif;
     background-color: transparent;
     position: relative;
     width: auto;
     height: 100%;
-  }
-
-  .main-nav ul {
-    flex-direction: row;
-    align-items: baseline;
-    padding: 0;
-  }
-  .main-nav li {
-    margin-left: 1rem;
-    padding: 0;
-    font-size: 1rem;
-  }
-
-  .btn-main-nav {
-    display: none;
-  }
+    
+    ul {
+      flex-direction: row;
+      align-items: baseline;
+      padding: 0;
+    }
+    
+    li {
+      margin-left: 1rem;
+      padding: 0;
+      font-size: 1rem;
+    }
+  } 
 }
 
-@media (min-width: 900px) {
+// over 900px
+@media (min-width: 56.25em) {
   .main-nav li {
     margin-left: 2rem;
     font-size: 1.2rem;
   }
 }
+// end of .main-nav bar
+
 
 // hamburger button
 .btn-main-nav {
@@ -100,11 +100,14 @@
     background-color: #ffffff;
     display: block;
     margin: 8px auto;
-
     transition: all 0.3s ease-in-out;
 
     .show & {
       transition: all 0.3s ease-in-out;
+    }
+
+    .show .btn-main-nav {
+      position: fixed;
     }
 
     .show &:nth-child(2) {
@@ -112,7 +115,7 @@
     }
 
     .show &:nth-child(1),
-    .btn-main-nav.show .line:nth-child(3) {
+    &.show .line:nth-child(3) {
       transition-delay: 0.3s;
     }
 
@@ -124,15 +127,20 @@
       transform: translateY(-13px) rotate(90deg);
     }
   }
-
+  // this means .show .btn-main-nav
   .show & {
     transition: all 0.3s ease-in-out;
     transition-delay: 0.6s;
     transform: rotate(45deg);
+
+    // this prevents hamburger button from scrolling away
+    position: fixed;
   }
-  // screen over 700px
-  @media (min-width: 700px) {
+}
+
+// screen over 700px
+@media (min-width: 43.75em) {
+  .btn-main-nav {
     display: none;
   }
 }
-// end of hamburger button

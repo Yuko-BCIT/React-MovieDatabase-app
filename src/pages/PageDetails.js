@@ -40,6 +40,7 @@ const Details = () => {
           <p className="overview">{from.overview}</p>
         </div>
       </div>
+      
       <Link to="/">
         <p className="button button-special">Back</p>
       </Link>

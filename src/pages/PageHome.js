@@ -155,8 +155,8 @@ const PageHome = () => {
                     <p className="rating">{movie.vote_average}</p>
                   <div className="info">
                     <p className="overview">
-                      {/* limits overviews to 150 letters  */}
-                      {movie.overview.slice(0, 150)}...
+                      {/* limits overviews to 200 letters  */}
+                      {movie.overview.slice(0, 200)}...
                     </p>
                   </div>
                   <Link to="/details" state={{ from: movie }}>

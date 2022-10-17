@@ -15,7 +15,8 @@ h1#home {
   top: -1px;
 }
 
-@media (min-width: 700px) {
+// over 700px
+@media (min-width: 43.75em) {
   .hero-image {
     object-fit: fill;
     height: 65vh;
@@ -39,20 +40,26 @@ h1#home {
   width: 100%;
   border-radius: 10px;
 }
+
 .grid-wrapper {
   display: grid;
   grid-template-columns: 1fr;
   gap: 3rem;
   max-width: 100%;
   overflow: hidden;
-  margin: 3rem 4rem;
+  margin: 3rem 1rem;
 }
 
-// over 600px tablet
+@media (min-width: 400px) {
+  .grid-wrapper {
+    margin: 3rem 2rem;
+  }
+}
+
+// over 600px
 @media (min-width: 37.5em) {
   .grid-wrapper {
     grid-template-columns: repeat(2, 1fr);
-    margin: 3rem 2rem;
     gap: 2rem;
   }
 }
@@ -65,37 +72,29 @@ h1#home {
   }
 }
 
-// over 1400px desktop
+// over 1200px
+@media (min-width: 75em) {
+  .grid-wrapper {
+    margin: 3rem 4rem;
+    gap: 3rem;
+  }
+}
+
+// over 1400px
 @media (min-width: 87.5em) {
   .grid-wrapper {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
-@media (min-width: 75em) {
-  .grid-wrapper {
-    margin: 3rem 4rem;
-  gap: 3rem;
-  }
-}
-
-/* "show movies by" buttons */
+// "show movies by" area
 #selections {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  margin: 0 2rem;
+  margin: 0 0.5rem;
 }
 
-@media (min-width: 900px) {
-  #selections {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  text-align: center;
-}
-}
-
-// show movies by individual button
+// "show movies by" button
 .category {
   color: #df2162;
   background-color: transparent;
@@ -105,18 +104,37 @@ h1#home {
   cursor: pointer;
   display: flex;
   align-self: center;
-  justify-content: center; /* this is for centering text in grid */
-  margin: 1.2rem;
-  padding: 1.2rem 2.8rem;
+  justify-content: center; // this is for centering text in grid
+  margin: 0.5rem;
+  padding: 0.5rem 0;
   // text styling
   font-size: 0.8rem;
   text-decoration: none;
   text-transform: uppercase;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
-
 }
 
+@media (min-width: 500px) {
+  #selections {
+    margin: 2rem;
+  }
+  .category {
+    padding: 1rem 1rem;
+  }
+}
+@media (min-width: 900px) {
+  #selections {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+  }
+  .category {
+    padding: 1.2rem;
+    width: 15rem;
+  }
+}
 @media (min-width: 1000px) {
   .category {
     font-size: 1rem;
@@ -186,6 +204,26 @@ h1#home {
 
 .overview {
   text-align: left;
-  height: 12rem;
-  margin-top: 0;
+  margin: 1rem 0;
+  // this can set range both 400px~599px, and 800px~999px
+  @media (min-width: 450px) and (max-width: 599px),
+    (min-width: 800px) and (max-width: 999px) {
+    font-size: 1.4rem;
+    margin: 2rem;
+  }
+  @media (min-width: 600px) and (max-width: 650px) {
+    font-size: 1rem;
+  }
 }
+
+@media (min-width: 400px) {
+  .rating {
+    padding: 2rem 0;
+  }
+}
+
+// @media (min-width: 600px) {
+//   .overview {
+//     margin: 1rem 0;
+//   }
+// }
