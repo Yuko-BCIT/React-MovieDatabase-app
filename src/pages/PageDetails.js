@@ -36,7 +36,7 @@ const Details = () => {
             <p className="rating">{from.vote_average}</p>
           </div>
 
-          <p>Overview</p>
+          <p className="overview-title">Overview</p>
           <p className="overview">{from.overview}</p>
         </div>
       </div>

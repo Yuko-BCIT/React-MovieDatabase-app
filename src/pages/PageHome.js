@@ -60,11 +60,38 @@ const PageHome = () => {
     <section>
       <h1 id="home">Home</h1>
 
-      <picture>
-        <source srcSet={camera} media="(max-width: 700px)" />
-        <img className="hero-image" src={film} alt="movie film roll" />
-      </picture>
+      <div className="home"><picture>
+        {movies &&
+          movies.results.slice(18, 19).map(
+            (
+              movie,
+              i // display 19th movies from each category
+            ) => (
+              /* <img className="hero-image" src={film} alt="movie film roll" /> */
+              /* <source srcSet={camera} media="(max-width: 700px)" /> */
+              <source
+                srcSet={`${IMAGE_BASE_URL}w780${movie.backdrop_path}`}
+                media="(max-width: 699px)"
+              />
+            )
+          )}
 
+        {movies &&
+          movies.results.slice(19, 20).map(
+            (
+              movie,
+              i // display 20th movies from each category
+            ) => (
+              <img
+                key={i}
+                src={`${IMAGE_BASE_URL}original${movie.backdrop_path}`}
+                alt={`movie poster of ${movie.title}`}
+                className="hero-image"
+              />
+            )
+          )}
+      </picture>
+      <p className="animate__animated animate__bounceInDown">Love Movies?</p></div>
       <h2 id="top">Show movies by</h2>
 
       <div id="selections">
@@ -152,7 +179,7 @@ const PageHome = () => {
 
                 {/* overlay hover effect */}
                 <div className="overlay">
-                    <p className="rating">{movie.vote_average}</p>
+                  <p className="rating">{movie.vote_average}</p>
                   <div className="info">
                     <p className="overview">
                       {/* limits overviews to 200 letters  */}

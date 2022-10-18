@@ -1,6 +1,6 @@
 // app info
 export const appTitle = 'Preview';
-export const appAuthor = 'Yuko Kitahata';
+export const appAuthor = 'Yuko Web Works';
 // tmdb API stuff
 export const API_KEY = "e713a35e277302da6ed37c641c1ad3f5";
 export const BASE_URL = "https://api.themoviedb.org/3/movie/";

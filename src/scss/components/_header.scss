@@ -21,7 +21,7 @@ header p {
   font-size: 2.5rem;
 }
 
-#subtitle {
+.subtitle {
   font-family: "montserrat", sans-serif;
   font-size: 0.8rem;
   display: none;
@@ -29,7 +29,7 @@ header p {
 
 // over 400px
 @media (min-width: 25em) {
-  #subtitle {
+  .subtitle {
     display: inline;
   }
 }
@@ -38,13 +38,13 @@ header p {
   header {
     height: 5rem;
   }
-  #subtitle {
+  .subtitle {
     display: none;
   }
 }
 // over 1000px
 @media (min-width: 62.5em) {
-  #subtitle {
+  .subtitle {
     display: inline;
     font-size: 1.2rem;
   }

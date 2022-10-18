@@ -1,15 +1,28 @@
 /* main */
+.home {
+  position: relative;
+}
+
 h1#home {
   margin: 0;
   height: 0;
   width: 0;
 }
 
+.animate__animated {
+  font-size: 2rem;
+  font-weight: 900;
+  position: absolute;
+  top: 25%;
+  right: 0;
+  left: 0;
+}
+
 .hero-image {
   width: 100vw;
-  height: 70vh;
   object-fit: cover;
   object-position: center;
+  filter: brightness(70%);
   // this hides the read line under the header, only on Home page
   position: relative;
   top: -1px;
@@ -18,8 +31,7 @@ h1#home {
 // over 700px
 @media (min-width: 43.75em) {
   .hero-image {
-    object-fit: fill;
-    height: 65vh;
+    height: 60vh;
   }
 }
 
@@ -28,7 +40,6 @@ h1#home {
 }
 
 .rating {
-  // color: #ffd700;
   color: #6363ff;
   font-size: 3rem;
   margin: 0;
@@ -108,11 +119,11 @@ h1#home {
   margin: 0.5rem;
   padding: 0.5rem 0;
   // text styling
-  font-size: 0.8rem;
+  font-size: 1rem;
+  font-weight: 900;
+  font-family: "Montserrat", sans-serif;
   text-decoration: none;
   text-transform: uppercase;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 700;
 }
 
 @media (min-width: 500px) {

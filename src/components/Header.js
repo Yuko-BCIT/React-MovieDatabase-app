@@ -29,7 +29,7 @@ const Header = ({ title }) => {
         <img src={preview} alt="site logo" className="site-logo" />
         <p>
           <span id="site-title">{title}&nbsp;</span>
-          <span id="subtitle">The Movie Database</span>
+          <span className="subtitle">The Movie Database</span>
         </p>
       </Link>
       <button

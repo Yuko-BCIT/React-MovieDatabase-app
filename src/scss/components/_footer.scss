@@ -1,6 +1,6 @@
 footer p {
   margin: 0;
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 // site-title
 #preview {
@@ -15,4 +15,17 @@ footer {
   left: 0;
   right: 0;
   border-top: 1px solid #581818;
+}
+
+.footer-subtitle {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .footer-subtitle {
+    display: inline;
+  }
+  footer p {
+    font-size: 1rem;
+  }
 }
