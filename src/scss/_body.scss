@@ -9,6 +9,7 @@
   text-align: center;
   color: white;
   background-color: #231717;
+  // this prevents button on the bottom from jumping
   padding-bottom: 8rem;
 }
 
@@ -78,7 +79,7 @@ a {
 // general buttons on multiple pages
 .button {
   margin: 3rem auto;
-  width: 8rem;
+  width: 8.5rem;
   height: 3rem;
   color: #420042f6;
   background-color: orange;
@@ -96,6 +97,17 @@ a {
   right: 0;
   margin: 0 auto;
 }
+
+@media (min-width: 600px) and (max-width: 800px) {
+  .button {
+    width: 7rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+  }
+  .button-info {
+    font-size: 0.9rem;
+  }
+} 
 
 // buttons on the bottom of each page
 .button-special {

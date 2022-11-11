@@ -1,5 +1,6 @@
 import { appTitle, appAuthor } from "../globals/globals";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Scroller from "../utilities/scroller";
 //components
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -15,6 +16,7 @@ function AppRouter() {
   return (
     <BrowserRouter>
       <div className="App">
+        <Scroller />
         <Header title={appTitle} />
 
         {/* this main part changes by pages */}

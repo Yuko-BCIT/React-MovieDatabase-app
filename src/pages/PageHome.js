@@ -8,9 +8,7 @@ import {
 } from "../globals/globals";
 import { useSelector, useDispatch } from "react-redux";
 import { addItem, deleteItem } from "../slice/favoritesSlice";
-import film from "../images/film.jpg";
 import poster from "../images/poster.jpg";
-import camera from "../images/camera.jpg";
 
 const PageHome = () => {
   useEffect(() => {
@@ -58,41 +56,43 @@ const PageHome = () => {
 
   return (
     <section>
-      <h1 id="home">Home</h1>
+      <h1 id="home">Preview the movie database</h1>
 
-      <div className="home"><picture>
-        {movies &&
-          movies.results.slice(18, 19).map(
-            (
-              movie,
-              i // display 19th movies from each category
-            ) => (
-              /* <img className="hero-image" src={film} alt="movie film roll" /> */
-              /* <source srcSet={camera} media="(max-width: 700px)" /> */
-              <source
-                srcSet={`${IMAGE_BASE_URL}w780${movie.backdrop_path}`}
-                media="(max-width: 699px)"
-              />
-            )
-          )}
+      <div className="home">
+        <picture>
+          {movies &&
+            movies.results.slice(5, 6).map(
+              (
+                movie,
+                i // display 6th movies from each category
+              ) => (
+                /* <img className="hero-image" src={film} alt="movie film roll" /> */
+                /* <source srcSet={camera} media="(max-width: 700px)" /> */
+                <source
+                  srcSet={`${IMAGE_BASE_URL}w780${movie.backdrop_path}`}
+                  media="(max-width: 699px)"
+                />
+              )
+            )}
 
-        {movies &&
-          movies.results.slice(19, 20).map(
-            (
-              movie,
-              i // display 20th movies from each category
-            ) => (
-              <img
-                key={i}
-                src={`${IMAGE_BASE_URL}original${movie.backdrop_path}`}
-                alt={`movie poster of ${movie.title}`}
-                className="hero-image"
-              />
-            )
-          )}
-      </picture>
-      <p className="animate__animated animate__bounceInDown">Love Movies?</p></div>
-      <h2 id="top">Show movies by</h2>
+          {movies &&
+            movies.results.slice(18, 19).map(
+              (
+                movie,
+                i // display 8th movies from each category
+              ) => (
+                <img
+                  key={i}
+                  src={`${IMAGE_BASE_URL}original${movie.backdrop_path}`}
+                  alt={`movie poster of ${movie.title}`}
+                  className="hero-image"
+                />
+              )
+            )}
+        </picture>
+        <p className="animation-text">Welcome to Preview, the movie database. Browse, sort, fave and enjoy!</p>
+      </div>
+      <h2 id="top">Sort movies by</h2>
 
       <div id="selections">
         {/* onClick changes the filter and fetches new data from API */}
@@ -133,9 +133,9 @@ const PageHome = () => {
 
       {/* display movies from API fetch */}
       <div className="grid-wrapper">
-        {/* limits movies to 12 */}
+        {/* limits movies to 20 */}
         {movies &&
-          movies.results.slice(0, 12).map((movie, i) => (
+          movies.results.slice(0, 20).map((movie, i) => (
             <div>
               {/* if poster is not available, show the placeholder img, else, show the poster */}
               <div className="poster">

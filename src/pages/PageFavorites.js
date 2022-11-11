@@ -73,7 +73,7 @@ const PageFavorites = () => {
         </div>
       ) : (
         // if favorite array is empty, render this
-        <p id="no-favorites">
+        <p id="no-favorites" className="center-me">
           Add movies to favorites by clicking &#9825; and create your own watch
           list!
         </p>
