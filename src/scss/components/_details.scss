@@ -9,7 +9,7 @@
   border-radius: 10px;
 
   .rating {
-    font-size: 2.3rem;
+    font-size: 2rem;
     position: absolute;
     top: 52%;
     left: 50%;
@@ -51,14 +51,9 @@
   margin: 3rem 0 0;
 }
 
-#details-img {
-  display: block;
-  margin: 0;
-}
-
 .rating-container {
   position: absolute;
-  top: 4rem;
+  top: 8rem;
   right: 5%;
 }
 
@@ -72,7 +67,7 @@
 
     .rating-container {
       position: absolute;
-      top: 5rem;
+      top: 7rem;
       right: 15%;
     }
   }
@@ -92,7 +87,7 @@
 
 
 .star-icon {
-  height: 7rem;
+  height: 6rem;
 }
 
 #details p {

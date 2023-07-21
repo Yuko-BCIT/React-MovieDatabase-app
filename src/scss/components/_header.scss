@@ -10,6 +10,7 @@ header {
 
 header p {
   display: inline-block;
+  color: white; //fixed bug for color disappearing after click
   margin: 0;
 }
 

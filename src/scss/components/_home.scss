@@ -1,9 +1,6 @@
 /* main */
 
 h1#home {
-  // margin: 0;
-  // height: 0;
-  // width: 0;
   display: none;
 }
 
@@ -83,6 +80,7 @@ h1#home {
 #individual-wrapper img {
   width: 100%;
   border-radius: 10px;
+  display: block;
 }
 
 .grid-wrapper {

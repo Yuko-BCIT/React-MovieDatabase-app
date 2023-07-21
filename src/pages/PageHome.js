@@ -18,7 +18,7 @@ const PageHome = () => {
   // display movies
   const [movies, setMovies] = useState(false);
 
-  //  set initial filter as Now Playing, then change state by user's choice
+  //  set initial filter as Popular, then change state by user's choice
   const [filter, setFilter] = useState("popular");
 
   useEffect(() => {
@@ -64,7 +64,7 @@ const PageHome = () => {
             movies.results.slice(5, 6).map(
               (
                 movie,
-                i // display 6th movies from each category
+                i // display 6th movies from each category, if screen width is less than 700px
               ) => (
                 /* <img className="hero-image" src={film} alt="movie film roll" /> */
                 /* <source srcSet={camera} media="(max-width: 700px)" /> */
@@ -76,10 +76,10 @@ const PageHome = () => {
             )}
 
           {movies &&
-            movies.results.slice(18, 19).map(
+            movies.results.slice(7, 8).map(
               (
                 movie,
-                i // display 8th movies from each category
+                i // display 8th movies from each category, if screen width is 700px and up
               ) => (
                 <img
                   key={i}
